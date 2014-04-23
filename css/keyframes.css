@@ -31,15 +31,6 @@
 	}
 }
 
-@-o-keyframes rotation /* Opera */
-{
-	from {
-		transform: rotateZ(0deg);
-	}
-	to {
-		transform: rotateZ(360deg);
-	}
-}
 
 /**
  * 	呼吸动画
@@ -74,16 +65,68 @@
 	}
 }
 
-@-o-keyframes zoom-in-and-out /* Opera */
+/**
+ * 	往下移动效果
+ */
+@keyframes move-down
 {
 	0% {
-		transform: scale(0.3);
+		transform: translateY(-5px);
 	}
 	100% {
-		transform: scale(1);
+		transform: translateY(5px);
+	}
+}
+
+@-moz-keyframes move-down /* Firefox */
+{
+	0% {
+		-moz-transform: translateY(-5px);
+	}
+	100% {
+		-moz-transform: translateY(5px);
+	}
+}
+
+@-webkit-keyframes move-down /* Safari 和 Chrome */
+{
+	0% {
+		-webkit-transform: translateY(-5px);
+	}
+	100% {
+		-webkit-transform: translateY(5px);
 	}
 }
 
 /**
  * 	往上移动效果
  */
+@keyframes move-up
+{
+	0% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+@-moz-keyframes move-up  /* Firefox */
+{
+	0% {
+		-moz-transform: translateY(5px);
+	}
+	100% {
+		-moz-transform: translateY(-5px);
+	}
+}
+
+@-webkit-keyframes move-up /* Safari 和 Chrome */
+{
+	0% {
+		-webkit-transform: translateY(5px);
+	}
+	100% {
+		-webkit-transform: translateY(-5px);
+	}
+}

@@ -1,6 +1,13 @@
+@import url(reset.min.css);
+@import url(keyframes.css);
+
 .responsive {
 	width: 100%;
 	height: 100%;
+}
+
+.center {
+	text-align: center;
 }
 
 #stage{
@@ -13,24 +20,12 @@
 	transition: all 1s;
 	-webkit-transition: all 1s;
 	-moz-transition: all 1s;
-	z-index: 0;
+	opacity: 1;
+	z-index: 1;
 }
 
 .scene.current {
 	opacity: 1;
-	left: 0;
-	top: 0;
-	z-index: 100;
-}
-
-.slideup {
-	top: -100% !important;
-	opacity: 0.9 !important;
-}
-
-.slidedown {
-	top: 100% !important;
-	opacity: 0.9 !important;
 }
 
 .label {
@@ -49,18 +44,42 @@
 	font-size: 16px;
 }
 
+.arrow-down {
+	position: fixed;
+	top: 15px;
+	width: 100%;
+	height: 25px;
+	background: url("../images/arrow_down.png") center center no-repeat;
+	background-size: 37.5px 12.5px;
+	animation: move-down 0.5s alternate  infinite;
+	-webkit-animation: move-down 0.5s alternate  infinite;
+	z-index: 1100;
+}
+
+.arrow-up {
+	position: fixed;
+	bottom: 15px;
+	width: 100%;
+	height: 25px;
+	background: url("../images/arrow_up.png") center center no-repeat;
+	background-size: 37.5px 12.5px;
+	animation: move-up 0.5s alternate  infinite;
+	-webkit-animation: move-up 0.5s alternate  infinite;
+	z-index: 1100;
+}
+
 
 /**================ 请柬封面 ==================**/
 
 #cover {
-	background: url(../images/homepage_bg.png) no-repeat center top;
+	background: url(../images/bg1.jpg) no-repeat center top;
 	background-size: 100% 100%;
 	position: absolute;
 }
 
 #cover .rotation-ring {
 	position: absolute;
-	top: -20%;
+	top: -25%;
 	z-index: 1;
 	background: url("../images/ring.png") no-repeat center center;
 	background-size: 50% auto;
@@ -74,7 +93,7 @@
 
 #cover .logo{
 	position: absolute;
-	top: -20%;
+	top: -25%;
 	z-index: 2;
 	background: transparent url("../images/logo.png") no-repeat center center;
 	background-size: 25% auto;
@@ -83,7 +102,7 @@
 #cover .touch-guide {
 	position: absolute;
 	left: 50%;
-	bottom: 100px;
+	bottom: 40px;
 	margin-left: -50px;
 	width: 100px;
 	height: 150px;
@@ -118,6 +137,95 @@
 
 /**================ 场景1  ==================**/
 #scene-1 {
-	background: url(../images/meeting_intro_bg.jpg) no-repeat center top;
+	background: url(../images/bg2.jpg) no-repeat center top;
+	background-size: 100% 100%;
+}
+
+#scene-1 .photo-intro{
+ 	text-align: center;
+ 	margin-top: 20%;
+ 	opacity: 0;
+ 	transition:  all 2.5s;
+	-webkit-transition:  all 2.5s;
+}
+
+#scene-1.current .photo-intro {
+	opacity: 1;
+}
+
+#scene-1 p.text-intro {
+	color: #AAA;
+	background-color: rgba(0,0,0, 0.5);
+	padding: 1em;
+	position: absolute;
+	bottom: 0;
+	
+	transform: translateY(1150px);
+	-webkit-transform: translateY(1150px);
+	-moz-transform: translateY(1150px);
+	
+	transition:  transform 1s;
+	-webkit-transition:  -webkit-transform 1s;
+}
+
+#scene-1.current p.text-intro {
+	transform: translateY(0px);
+	-webkit-transform: translateY(0px);
+}
+/**================ 场景2  ==================**/
+#scene-2 {
+	background: url(../images/bg3.jpg) no-repeat center top;
+	background-size: 100% 100%;
+}
+
+#scene-2 .schedule {
+	transition:  transform 0.5s;
+	-webkit-transition:  -webkit-transform 0.5s;
+}
+
+#scene-2 .schedule td {
+}
+
+#scene-2 .schedule td h2, #scene-2 .schedule td p{
+	width: 100px;
+	box-sizing: border-box;
+	margin: 30px 10px;
+	text-align: center;
+	color: #FFF;
+}
+
+#scene-2 .schedule td h2 {
+	height: 30px;
+	line-height: 30px;
+	background-color: rgba(0,0,0,0.7);
+	border: 1px solid rgba(0,0,0,0.7);
+	border-radius: 12px 12px 0 0;
+	margin-bottom: 0;
+}
+
+#scene-2 .schedule td p {
+	height: 70px;
+	line-height: 30px;
+	background-color: rgba(255,255,255,0.3);
+	border: 1px solid rgba(255,255,255,0.3);
+	border-radius:  0 0 12px 12px;
+	margin-top: 0;
+}
+
+/**================ 场景3  ==================**/
+#scene-3 {
+	background: url(../images/bg3.jpg) no-repeat center top;
+	background-size: 100% 100%;
+}
+
+/**================ 场景4  ==================**/
+#scene-4 {
+	background: url(../images/bg4.jpg) no-repeat center top;
+	background-size: 100% 100%;
+}
+
+/**================ 场景5  ==================**/
+#scene-5 {
+	background: url(../images/bg4.jpg) no-repeat center top;
 	background-size: 100% 100%;
 }
