@@ -1,0 +1,89 @@
+/*
+ * 360度旋转动画
+ */
+@keyframes rotation
+{
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+
+@-moz-keyframes rotation /* Firefox */
+{
+	from {
+		-moz-transform: rotateZ(0deg);
+	}
+	to {
+		-moz-transform: rotateZ(360deg);
+	}
+}
+
+@-webkit-keyframes rotation /* Safari 和 Chrome */
+{
+	from {
+		-webkit-transform: rotateZ(0deg);
+	}
+	to {
+		-webkit-transform: rotateZ(360deg);
+	}
+}
+
+@-o-keyframes rotation /* Opera */
+{
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+
+/**
+ * 	呼吸动画
+ */
+@keyframes zoom-in-and-out
+{
+	0% {
+		transform: scale(0.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@-moz-keyframes zoom-in-and-out /* Firefox */
+{
+	0% {
+		-moz-transform: scale(0.3);
+	}
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes zoom-in-and-out /* Safari 和 Chrome */
+{
+	0% {
+		-webkit-transform: scale(0.3);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes zoom-in-and-out /* Opera */
+{
+	0% {
+		transform: scale(0.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/**
+ * 	往上移动效果
+ */

@@ -1,0 +1,123 @@
+.responsive {
+	width: 100%;
+	height: 100%;
+}
+
+#stage{
+	width: 100%;
+	height: 100%;
+}
+
+.scene {
+	position: absolute;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	z-index: 0;
+}
+
+.scene.current {
+	opacity: 1;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.slideup {
+	top: -100% !important;
+	opacity: 0.9 !important;
+}
+
+.slidedown {
+	top: 100% !important;
+	opacity: 0.9 !important;
+}
+
+.label {
+	background: url("../images/label_bg.png") no-repeat center top;
+	background-size: 100%;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	padding: 0;
+	margin: 0;
+	color: #925022;
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+
+/**================ 请柬封面 ==================**/
+
+#cover {
+	background: url(../images/homepage_bg.png) no-repeat center top;
+	background-size: 100% 100%;
+	position: absolute;
+}
+
+#cover .rotation-ring {
+	position: absolute;
+	top: -20%;
+	z-index: 1;
+	background: url("../images/ring.png") no-repeat center center;
+	background-size: 50% auto;
+	animation: rotation 2s;
+	-webkit-animation: rotation 2s;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#cover .logo{
+	position: absolute;
+	top: -20%;
+	z-index: 2;
+	background: transparent url("../images/logo.png") no-repeat center center;
+	background-size: 25% auto;
+}
+
+#cover .touch-guide {
+	position: absolute;
+	left: 50%;
+	bottom: 100px;
+	margin-left: -50px;
+	width: 100px;
+	height: 150px;
+	overflow: visible;
+}
+
+#cover .touch-guide .arrow-top {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent url("../images/arraw_top.png") no-repeat center center;
+}
+
+#cover .touch-guide .touch-area {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: -70px;
+	background: transparent url("../images/touch_area.png") no-repeat center center;
+	animation: zoom-in-and-out 1s  infinite;
+	-webkit-animation: zoom-in-and-out 1s  infinite;
+}
+
+#cover .touch-guide .touch-hand {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: -90px;
+	left: 5px;
+	background: transparent url("../images/hand.png") no-repeat center center;
+}
+
+/**================ 场景1  ==================**/
+#scene-1 {
+	background: url(../images/meeting_intro_bg.jpg) no-repeat center top;
+	background-size: 100% 100%;
+}
