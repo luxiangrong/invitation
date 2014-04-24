@@ -2,6 +2,7 @@ jQuery.noConflict();
 (function($) {
 	$(function() {
 		var winHeight = $(window).height();
+		var winWidth = $(window).width();
 		var scenesArray = ['cover', 'scene-1', 'scene-2', 'scene-3', 'scene-4', 'scene-5'];
 		var current = 0;
 
@@ -77,7 +78,7 @@ jQuery.noConflict();
 				var scheduleTdWidth = $(".schedule").find('td').width();
 				var params = parseToMatrix($(".schedule").css('transform'));
 				var translateXValue = parseInt(params[4]);
-				if(translateXValue <= $(".schedule").width() * -1 + scheduleTdWidth) {
+				if(translateXValue <= $(".schedule").width() * -1 + scheduleTdWidth * 2) {
 					return ;
 				}
 				translateXValue = translateXValue - scheduleTdWidth;
@@ -97,14 +98,27 @@ jQuery.noConflict();
 			preventDefaultEvents : true
 		});
 		
-
-		$(".schedule").click(function() {
-			console.log( $(".schedule").css('transform'));
-			var matrixParams= parseToMatrix($(".schedule").css('transform'));
-			var translateXValue = matrixParams[4];
-			translateXValue = translateXValue - $(".schedule").find('td').width();
-			$(".schedule").css('transform', 'translateX(' + translateXValue + 'px)');
-			console.log( $(".schedule").css('transform'));
+		$("#scene-3 .avatar-box").on('click', function(){
+			$("#guest-info-1").addClass('show');
+			var modal = $("<div class='modal'></div>");
+			modal.css({
+				'position': 'fixed',
+				'width': '100%',
+				'height': '100%',
+				'top': 0,
+				'left': 0,
+				'background-color': 'rgba(0,0,0,0.7)'
+			});
+			$("#guest-info-1").after(modal);
 		});
+		
+		$("#scene-3 .guest-info").on('click', function(){
+			$(this).removeClass('show');
+			$(this).find('~ .modal').remove();
+		});
+
+
+		nextSence();
+		nextSence();
 	});
 })(jQuery);

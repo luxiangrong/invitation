@@ -1,8 +1,18 @@
 @import url(reset.min.css);
 @import url(keyframes.css);
 
-* {
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+.responsive-x {
+	width: 100%;
+}
+
+.responsive-y {
+	height: 100%;
 }
 
 .responsive {
@@ -12,6 +22,26 @@
 
 .center {
 	text-align: center;
+}
+
+.row:before, .row:after {
+	display: table;
+	content: " ";
+}
+
+.col-50 {
+	position: relative;
+	float: left;
+	min-height: 1px;
+}
+
+.col-50 {
+	width: 50%;
+}
+
+.circle-img {
+	border: 4px solid rgba(255,255,255, 0.5);
+	border-radius: 50%;
 }
 
 #stage{
@@ -47,10 +77,11 @@
 	color: #925022;
 	padding-top: 5px;
 	font-size: 16px;
+	z-index: 10;
 	transform: translateY(-50px);
 	-webkit-transform: translateY(-50px);
-	transition: transform 1s 0.8s ease-in-out;
-	-webkit-transition: -webkit-transform 1s 0.8s ease-in-out;
+	transition: transform 0.5s 0.8s ease-in-out;
+	-webkit-transition: -webkit-transform 0.5s 0.8s ease-in-out;
 }
 
 .scene.current .label {
@@ -60,8 +91,10 @@
 
 .arrow-down {
 	position: fixed;
-	top: 15px;
-	width: 100%;
+	top: 5px;
+	width: 38px;
+	left: 50%;
+	margin-left: -19px;
 	height: 25px;
 	background: url("../images/arrow_down.png") center center no-repeat;
 	background-size: 37.5px 12.5px;
@@ -72,8 +105,10 @@
 
 .arrow-up {
 	position: fixed;
-	bottom: 15px;
-	width: 100%;
+	bottom: 5px;
+	width: 38px;
+	left: 50%;
+	margin-left: -19px;
 	height: 25px;
 	background: url("../images/arrow_up.png") center center no-repeat;
 	background-size: 37.5px 12.5px;
@@ -96,7 +131,7 @@
 	top: -25%;
 	z-index: 1;
 	background: url("../images/ring.png") no-repeat center center;
-	background-size: 50% auto;
+	background-size: 40% auto;
 	animation: rotation 2s;
 	-webkit-animation: rotation 2s;
 	animation-timing-function: linear;
@@ -107,7 +142,7 @@
 
 #cover .logo{
 	position: absolute;
-	top: -25%;
+	top: -27%;
 	z-index: 2;
 	background: transparent url("../images/logo.png") no-repeat center center;
 	background-size: 25% auto;
@@ -128,6 +163,7 @@
 	width: 100%;
 	height: 100%;
 	background: transparent url("../images/arraw_top.png") no-repeat center center;
+	background-size: 30%;
 }
 
 #cover .touch-guide .touch-area {
@@ -136,6 +172,7 @@
 	height: 100%;
 	bottom: -70px;
 	background: transparent url("../images/touch_area.png") no-repeat center center;
+	background-size: 30%;
 	animation: zoom-in-and-out 1s  infinite;
 	-webkit-animation: zoom-in-and-out 1s  infinite;
 }
@@ -147,6 +184,7 @@
 	bottom: -90px;
 	left: 5px;
 	background: transparent url("../images/hand.png") no-repeat center center;
+	background-size: 30%;
 }
 
 /**================ 场景1  ==================**/
@@ -228,6 +266,15 @@
 
 #scene-2 table.meeting-info {
 	width: 100%;
+	transform: translateY(1150px);
+	-webkit-transform: translateY(1150px);
+	transition:  transform 1.5s;
+	-webkit-transition:  -webkit-transform 1.5s;
+}
+
+#scene-2.current table.meeting-info {
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
 }
 
 #scene-2 table.meeting-info td {
@@ -290,6 +337,169 @@
 #scene-3 {
 	background: url(../images/bg3.jpg) no-repeat center top;
 	background-size: 100% 100%;
+}
+
+#scene-3 ul, #scene-3 li {
+	list-style: none;
+	text-align:center;
+}
+
+#scene-3 ul{
+	margin-top: 10px;
+}
+
+#scene-3 li {
+	padding-top: 15px;
+}
+
+#scene-3 .avatar-box {
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+}
+
+#scene-3 .avatar-box.active {
+	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+}
+
+#scene-3  li img.avatar{
+	transition: transform 1.5s , border-width 0.5s;
+	-webkit-transition: -webkit-transform 1.5s , border-width 0.5s;
+}
+
+#scene-3  li:nth-of-type(2) img.avatar{
+	transition: transform 1.8s;
+	-webkit-transition: -webkit-transform 1.8s;
+}
+
+#scene-3  li:nth-of-type(3) img.avatar{
+	transition: transform 2s;
+	-webkit-transition: -webkit-transform 2s;
+}
+
+#scene-3.current  li img.avatar{
+	transform:  translateX(0px) rotateZ(0deg) !important;
+	-webkit-transform:  translateX(0px) rotateZ(0deg) !important;
+}
+
+
+#scene-3 li p {
+	color: #FFF;
+	margin-top: 5px;
+}
+
+#scene-3  li p{
+	opacity: 0;
+	transition: transform 1.5s , opacity 1.5s;
+	-webkit-transition: -webkit-transform 1.5s, opacity 1.5s;
+}
+
+#scene-3  li:nth-of-type(2) p{
+	opacity: 0;
+	transition: transform 1.8s, opacity 1.8s;
+	-webkit-transition: -webkit-transform 1.8s, opacity 1.8s;
+}
+
+#scene-3  li:nth-of-type(3) p{
+	opacity: 0;
+	transition: transform 2s, opacity 2s;
+	-webkit-transition: -webkit-transform 2s, opacity 2s;
+}
+
+#scene-3.current  li p{
+	opacity: 1 !important ;
+	transform:  translateX(0px) !important ;
+	-webkit-transform:  translateX(0px) !important;
+}
+
+#scene-3 .left-col li img.avatar{
+	transform:  translateX(-320px) rotateZ(-360deg);
+	-webkit-transform:  translateX(-320px) rotateZ(-360deg);
+}
+
+#scene-3 .left-col li p{
+	opacity: 0;
+	transform:  translateX(-320px);
+	-webkit-transform:  translateX(-320px);
+}
+
+#scene-3 .right-col li img.avatar{
+	transform:  translateX(320px) rotateZ(360deg);
+	-webkit-transform:  translateX(320px) rotateZ(360deg);
+}
+
+#scene-3 .right-col li p{
+	opacity: 0;
+	transform:  translateX(320px);
+	-webkit-transform:  translateX(320px);
+}
+
+#scene-3 .guest-info {
+	position: fixed; 
+	top: 10%; 
+	width: 90%; 
+	left: 5%;
+	z-index: 20;
+	background-color: rgba(0,0,0,0.9);
+	border-radius: 0 0 20px 20px;
+}
+
+#scene-3 .guest-info i{
+	line-height: 22px; 
+	font-size: 24px; 
+	font-weight: 800; 
+	color: #666; position: 
+	absolute; 
+	width: 22px; 
+	height: 22px; 
+	border: 1px solid #FFF; 
+	background-color: #FFF; 
+	border-radius: 11px; 
+	left: -11px; 
+	top: -11px;
+	font-style: normal;
+}
+
+#scene-3 .img-crop {
+	height: 180px;
+	overflow-y: hidden;
+}
+
+#scene-3 .guest-info img {
+	width: 100%;
+}
+
+#scene-3 .guest-info dl {
+	color: #FFF;
+	text-align: left;
+	width: 100%;
+	padding: 8px;
+}
+
+#scene-3 .guest-info dl dt {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: left;
+}
+
+#scene-3 .guest-info dl dd {
+	line-height: 1.2em;
+}
+
+#scene-3 .guest-info.hide {
+	transform: scale(0);
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transition: transform 1s , opacity 1s  ;
+	-webkit-transition: -webkit-transform 1s  , opacity 1s  ;
+}
+
+#scene-3 .guest-info.show {
+	opacity: 1;
+	transform: scale(1);
+	-webkit-transform: scale(1);
 }
 
 /**================ 场景4  ==================**/
