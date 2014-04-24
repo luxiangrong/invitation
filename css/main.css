@@ -268,8 +268,8 @@
 	width: 100%;
 	transform: translateY(1150px);
 	-webkit-transform: translateY(1150px);
-	transition:  transform 1.5s;
-	-webkit-transition:  -webkit-transform 1.5s;
+	transition:  transform 1s;
+	-webkit-transition:  -webkit-transform 1s;
 }
 
 #scene-2.current table.meeting-info {
