@@ -54,12 +54,30 @@ jQuery.noConflict();
 			}
 			return [0,0,0,0,0,0];
 		};
+		
+		$(".adv").touchwipe({
+			wipeUp : function() {
+				$(".adv").css({
+					'transform': 'translateY(-40px)'
+				});
+			},
+			wipeDown : function() {
+				$(".adv").css({
+					'transform': 'translateY(-' + winHeight * 0.9 + 'px)'
+				});
+			},
+			min_move_x : 10,
+			min_move_y : 10,
+			preventDefaultEvents : true
+		});
+		
+		$(".adv").click(function(){
+			$(".adv").css({
+				'transform': 'translateY(-' + winHeight * 0.9 + 'px)'
+			});
+		});
 
 		$("#stage").touchwipe({
-			wipeLeft : function() {
-			},
-			wipeRight : function() {
-			},
 			wipeUp : function() {
 				//手指往下滑动，页面往上滚动
 				prevSence();
@@ -117,7 +135,81 @@ jQuery.noConflict();
 			$(this).find('~ .modal').remove();
 		});
 
+		//广告
+		$(".adv-list").find('.adv-item').innerWidth($(".adv").width());
+		$(".adv-list").touchwipe({
+			wipeLeft : function() {
+				slideLeft($(".adv-list"), $(".adv-list").find('td').width());
+			},
+			wipeRight : function() {
+				slideRight($(".adv-list"), $(".adv-list").find('td').width());
+			},
+			min_move_x : 20,
+			min_move_y : 20,
+			preventDefaultEvents : true,
+			stopPropagation: false
+		});
+		
+		$(".adv-list").click(function(){
+			slideLeft((".adv-list"), $(".adv-list").find('td').width());
+		});
+		
+		/**
+		 * 向左滑动
+		 * 
+		 * @param {jQury Object} $elem 需要滑动的元素， jquery包装对象
+		 * @param {Number} $step 每次滑动的距离
+		 */
+		var slideLeft = function(elem, $step){
+			var $elem = $(elem);
+			var params = parseToMatrix($elem.css('transform'));
+			var translateXValue = parseInt(params[4]);
+			var num = Math.floor(winWidth / $step);
+			if(translateXValue <= $elem.width() * -1 + $step * num) {
+				return ;
+			}
+			translateXValue = translateXValue - $step;
+			if(translateXValue <= $elem.width() * -1 + $step * num ) {
+				$elem.closest('.slider').find('.next').removeClass('active');
+			} 
+			$elem.closest('.slider').find('.prev').addClass('active');
+			$elem.css('transform', 'translateX(' + translateXValue + 'px)');
+		};
+		
+		/**
+		 * 向右滑动
+		 * 
+		 * @param {jQury Object} $elem 需要滑动的元素， jquery包装对象
+		 * @param {Number} $step 每次滑动的距离
+		 */
+		var slideRight = function(elem, $step){
+			var $elem = $(elem);
+			var params = parseToMatrix($elem.css('transform'));
+			var translateXValue = parseInt(params[4]);
+			if(translateXValue >= 0) {
+				return ;
+			}
+			translateXValue = translateXValue + $step;
+			if(translateXValue >= 0) {
+				$elem.closest('.slider').find('.prev').removeClass('active');
+			} 
+			$elem.closest('.slider').find('.next').addClass('active');
+			$elem.css('transform', 'translateX(-' + Math.abs(translateXValue) + 'px)');
+		};
+		
+		var openDialog = function(id) {
+			$("#" + id).show();
+			$("#" + id).find('.close').on('click', function(){
+				$("#" + id).hide();
+			});
+		};
+		
+		$("#sign-up").click(function(){
+			openDialog('sign-up-dialog');
+		});
 
+		nextSence();
+		nextSence();
 		nextSence();
 		nextSence();
 	});

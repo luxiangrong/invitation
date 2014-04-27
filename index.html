@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="css/main.css" />
 		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-		<script type="text/javascript" src="js/plugin.js"></script>
+		<script type="text/javascript" src="js/jquery.touchwipe.1.1.1.js"></script>
 		<script type="text/javascript" src="js/function.js"></script>
 	</head>
 	<body style="margin:0;padding:0;height:100%; overflow: hidden;">
@@ -18,6 +18,90 @@
 			</div>
 			<div id="scene-4" class="responsive scene">
 				<h1 class="label">赞助商</h1>
+				<div class="row sponsors-list">
+					<div class="col-33">
+						<img src="images/sponsors_01.png" class="responsive-x"/>
+					</div>
+					<div class="col-33">
+						<img src="images/sponsors_02.png" class="responsive-x"/>
+					</div>
+					<div class="col-33">
+						<img src="images/sponsors_03.png" class="responsive-x"/>
+					</div>
+					<div class="col-33">
+						<img src="images/sponsors_04.png" class="responsive-x"/>
+					</div>
+					<div class="col-33">
+						<img src="images/sponsors_05.png" class="responsive-x"/>
+					</div>
+					<div class="col-33">
+						<img src="images/sponsors_06.png" class="responsive-x"/>
+					</div>
+				</div>
+				
+				<div class="row" style="position: relative;">
+					<h1 class="label" style="z-index: 1">联系方式</h1>
+					<div class="col-100">
+						<ul class="contact">
+							<li>
+								<strong><i class="icon-phone"></i></strong><span>+86-20-12345678</span>
+							</li>
+							<li>
+								<strong><i class="icon-email"></i></strong><span>gumaoning@sohu.com</span>
+							</li>
+							<li>
+								<strong><i class="icon-location"></i></strong><span>中国广州  大学城中心</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="center sign-up">
+					<button id="sign-up" class="btn-sign"></button>
+				</div>
+				
+				<div class="adv">
+					<div class="nav-bar">
+						<img class="logo-2" src="images/logo_02.png" width="91" />
+					</div>
+					<div class="slider">
+						<table class="adv-list">
+							<tbody>
+								<tr>
+									<td>
+										<div class="adv-item">
+											<img src="images/adv_01.jpg" class="responsive-x adv-img"/>
+											<h3>Fashion     Creativity     Aesthetics</h3>
+											<h2>新派  创意  美感</h2>
+										</div>
+									</td>
+									<td>
+										<div class="adv-item">
+											<img src="images/adv_01.jpg" class="responsive-x adv-img"/>
+											<h3>Fashion     Creativity     Aesthetics</h3>
+											<h2>新派  创意  美感</h2>
+										</div>
+									</td>
+									<td>
+										<div class="adv-item">
+											<img src="images/adv_01.jpg" class="responsive-x adv-img"/>
+											<h3>Fashion     Creativity     Aesthetics</h3>
+											<h2>新派  创意  美感</h2>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="row">
+							<div class="col-50 prev">
+								<span>&lt;</span>
+							</div>
+							<div class="col-50 next active">
+								<span>&gt;</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="scene-3" class="responsive scene">
 				<h1 class="label">嘉宾介绍</h1>
@@ -158,7 +242,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<div class="map" id="map" style="width: 100%;  position: fixed; top: 233px; ">
+				<div class="map" id="map" style="width: 100%;  position: absolute; top: 233px; ">
 					<img src="images/map.jpg" alt="地图" style="width: 100%;" />
 						<!--
 						<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
@@ -186,6 +270,30 @@
 					<div class="arrow-top"></div>
 					<div class="touch-area"></div>
 					<div class="touch-hand"></div>
+				</div>
+			</div>
+			<div class="dialog-modal"  id="sign-up-dialog">
+				<div class="dialog">
+					<div class="close" style="text-align: right;">
+						<i><img src="images/icon_04.png" width="22"/></i>
+					</div>
+					<form>
+						<div class="control-group">
+							<label>姓名<span class="required">*</span></label>
+							<input class="form-control" type="text" />
+						</div>
+						<div class="control-group">
+							<label>邮箱<span class="required">*</span></label>
+							<input class="form-control" type="text" />
+						</div>
+						<div class="control-group">
+							<label>手机<span class="required">*</span></label>
+							<input class="form-control" type="text" />
+						</div>
+						<div class="control-group">
+							<button class="btn">确 定</button>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="arrow-down"></div>

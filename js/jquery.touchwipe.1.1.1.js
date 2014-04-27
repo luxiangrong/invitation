@@ -20,7 +20,8 @@
 			},
 			wipeDown : function() {
 			},
-			preventDefaultEvents : true
+			preventDefaultEvents : true,
+			stopPropagation: true
 		};
 
 		if (settings)
@@ -40,6 +41,9 @@
 			function onTouchMove(e) {
 				if (config.preventDefaultEvents) {
 					e.preventDefault();
+				}
+				if (config.stopPropagation) {
+					$.Event(e).stopPropagation();
 				}
 				if (isMoving) {
 					var x = e.touches[0].pageX;
@@ -65,6 +69,9 @@
 			}
 
 			function onTouchStart(e) {
+				if (config.stopPropagation) {
+					$.Event(e).stopPropagation();
+				}
 				if (e.touches.length == 1) {
 					startX = e.touches[0].pageX;
 					startY = e.touches[0].pageY;
