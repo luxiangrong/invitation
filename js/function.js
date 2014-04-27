@@ -3,7 +3,7 @@ jQuery.noConflict();
 	$(function() {
 		var winHeight = $(window).height();
 		var winWidth = $(window).width();
-		var scenesArray = ['cover', 'scene-1', 'scene-2', 'scene-3', 'scene-4', 'scene-5'];
+		var scenesArray = ['cover', 'scene-1', 'scene-2', 'scene-3', 'scene-4'];
 		var current = 0;
 
 		$(".arrow-down").click(function(e) {
@@ -22,6 +22,8 @@ jQuery.noConflict();
 			$("#" + scenesArray[current]).removeClass('current');
 			current++;
 			$("#" + scenesArray[current]).addClass('current');
+			
+			showArraw();
 		};
 
 		var prevSence = function() {
@@ -33,6 +35,23 @@ jQuery.noConflict();
 			}
 			slideIn($("#" + scenesArray[current]));
 			$("#" + scenesArray[current]).addClass('current');
+			
+			showArraw();
+		};
+		
+		var showArraw = function(){
+			if($(".current").attr('id') == 'cover') {
+				 $(".arrow-down").hide();
+				 $(".arrow-up").hide();
+				 return;
+			}
+			if($(".current").attr('id') == 'scene-4') {
+				$(".arrow-up").show();
+				$(".arrow-down").hide();
+			} else {
+				$(".arrow-down").show();
+				$(".arrow-up").show();
+			}
 		};
 		
 		//向上滑出屏幕
@@ -208,9 +227,5 @@ jQuery.noConflict();
 			openDialog('sign-up-dialog');
 		});
 
-		nextSence();
-		nextSence();
-		nextSence();
-		nextSence();
 	});
 })(jQuery);

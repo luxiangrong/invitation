@@ -131,6 +131,7 @@ ul,ol,li {
 	animation: move-down 0.5s alternate  infinite;
 	-webkit-animation: move-down 0.5s alternate  infinite;
 	z-index: 1100;
+	display: none;
 }
 
 .arrow-up {
@@ -145,6 +146,7 @@ ul,ol,li {
 	animation: move-up 0.5s alternate  infinite;
 	-webkit-animation: move-up 0.5s alternate  infinite;
 	z-index: 1100;
+	display: none;
 }
 
 .dialog-modal {
