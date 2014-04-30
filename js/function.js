@@ -7,15 +7,18 @@ jQuery.noConflict();
 		var current = 0;
 
 		$(".arrow-down").click(function(e) {
-			nextSence();
+			prevSence();
 		});
 		
 		$(".arrow-up").click(function(){
-			prevSence();
+			nextSence();
 		});
 
 		var nextSence = function() {
 			if (current == scenesArray.length - 1) {
+				$(".adv").css({
+					'transform': 'translateY(-' + winHeight * 0.9 + 'px)'
+				});
 				return;
 			}
 			slideUp($("#" + scenesArray[current]));
@@ -46,8 +49,8 @@ jQuery.noConflict();
 				 return;
 			}
 			if($(".current").attr('id') == 'scene-4') {
-				$(".arrow-up").show();
-				$(".arrow-down").hide();
+				$(".arrow-up").hide();
+				$(".arrow-down").show();
 			} else {
 				$(".arrow-down").show();
 				$(".arrow-up").show();
