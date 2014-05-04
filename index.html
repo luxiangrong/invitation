@@ -8,8 +8,22 @@
 
 		<link rel="stylesheet" href="css/main.css" />
 		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.queryloader2.js"></script>
 		<script type="text/javascript" src="js/jquery.touchwipe.1.1.1.js"></script>
 		<script type="text/javascript" src="js/function.js"></script>
+		<script>
+			//加载动画
+			jQuery.noConflict();
+			(function($) {
+				$(document).ready(function () {
+				    $("body").queryLoader2({
+				    	backgroundColor: '#FFFFFF',
+				    	barColor: '#CC0000',
+				    	barHeight: 3
+				    });
+				});
+			})(jQuery);
+		</script>
 	</head>
 	<body style="margin:0;padding:0;height:100%; overflow: hidden;">
 		<div id="stage">

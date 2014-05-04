@@ -807,3 +807,8 @@ ul,ol,li {
 	background: url(../images/bg4.jpg) no-repeat center top;
 	background-size: 100% 100%;
 }
+
+/*=============== 加载动画 ===============*/
+#qLoverlay {
+	background: url(../images/loading.gif) center center no-repeat ;
+}

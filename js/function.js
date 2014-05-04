@@ -5,6 +5,7 @@ jQuery.noConflict();
 		var winWidth = $(window).width();
 		var scenesArray = ['cover', 'scene-1', 'scene-2', 'scene-3', 'scene-4'];
 		var current = 0;
+		
 
 		$(".arrow-down").click(function(e) {
 			prevSence();
