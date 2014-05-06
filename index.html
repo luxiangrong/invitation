@@ -122,7 +122,7 @@
 			<div id="scene-3" class="responsive scene">
 				<h1 class="label">嘉宾介绍</h1>
 				<div class="row responsive view" id="guest-list">
-					<div class="col-50 left-col">
+					<div class="col-50 left-col responsive-y">
 						<ul>
 							<li>
 								<div class="avatar-box"><img src="images/avatar_01.jpg" width="80" class="circle-img avatar"/></div>
@@ -138,7 +138,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="col-50 right-col">
+					<div class="col-50 right-col responsive-y">
 						<ul>
 							<li>
 								<div class="avatar-box"><img src="images/avatar_04.jpg"  width="80" class="circle-img avatar"/></div>
@@ -224,50 +224,52 @@
 						</p></td>
 					</tr>
 				</table>
-				<table class="meeting-info">
-					<tbody>
-						<tr>
-							<td rowspan="3">
-								<div class="meeting-calendar">
-									<span>November</span>
-									<strong>21</strong>
-								</div>
-							</td>
-							<td>
-								<div class="icon">
-									<img src="images/icon_01.png" style="width: 18px;" />
-								</div>
-							</td>
-							<td class="meeting-item"><p>2014年10月11日 12：00-15：00</p></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="icon">
-									<img src="images/icon_02.png"  style="width: 18px;" />
-								</div>
-							</td>
-							<td class="meeting-item"><p>会议规模 200人</p></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="icon">
-									<img src="images/icon_03.png"  style="width: 18px;" />
-								</div>
-							</td>
-							<td class="meeting-item"><p>中国广州 大学城</p></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="map" id="map" style="width: 100%;  position: absolute; top: 233px; ">
-					<img src="images/map.jpg" alt="地图" style="width: 100%;" />
-						<!--
-						<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
-												<script type="text/javascript"> 
-												var map = new BMap.Map("map"); 
-												var point = new BMap.Point(116.404, 39.915); 
-												map.centerAndZoom(point, 15); -->
-						
-				</script>
+				<div class=""  style="position: absolute; bottom: 0px; width: 100%;">
+					<table class="meeting-info" style="z-index: 100">
+						<tbody>
+							<tr>
+								<td rowspan="3">
+									<div class="meeting-calendar">
+										<span>November</span>
+										<strong>21</strong>
+									</div>
+								</td>
+								<td>
+									<div class="icon">
+										<img src="images/icon_01.png" style="width: 18px;" />
+									</div>
+								</td>
+								<td class="meeting-item"><p>2014年10月11日 12：00-15：00</p></td>
+							</tr>
+							<tr>
+								<td>
+									<div class="icon">
+										<img src="images/icon_02.png"  style="width: 18px;" />
+									</div>
+								</td>
+								<td class="meeting-item"><p>会议规模 200人</p></td>
+							</tr>
+							<tr>
+								<td>
+									<div class="icon">
+										<img src="images/icon_03.png"  style="width: 18px;" />
+									</div>
+								</td>
+								<td class="meeting-item"><p>中国广州 大学城</p></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="map" id="map" style="width: 100%; max-height: 150px;z-index: 100">
+						<img src="images/map.jpg" alt="地图" style="width: 100%;" />
+							<!--
+							<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+													<script type="text/javascript"> 
+													var map = new BMap.Map("map"); 
+													var point = new BMap.Point(116.404, 39.915); 
+													map.centerAndZoom(point, 15); -->
+							
+					</script>
+					</div>
 				</div>
 			</div>
 			<div id="scene-1" class="responsive scene ">

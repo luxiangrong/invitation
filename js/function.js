@@ -220,6 +220,13 @@ jQuery.noConflict();
 			$elem.css('transform', 'translateX(-' + Math.abs(translateXValue) + 'px)');
 		};
 		
+		var responseToWindow = function(){
+			$("#scene-2 .schedule td h2, #scene-2 .schedule td p").width(winWidth * 0.3);
+			$("#scene-2 .schedule td h2").height(winWidth * 0.3 * 0.3);
+			$("#scene-2 .schedule td p").height(winWidth * 0.3 * 0.7);
+		};
+		responseToWindow();
+		
 		var openDialog = function(id) {
 			$("#" + id).show();
 			$("#" + id).find('.close').on('click', function(){
@@ -230,6 +237,9 @@ jQuery.noConflict();
 		$("#sign-up").click(function(){
 			openDialog('sign-up-dialog');
 		});
-
+		
+		nextSence();
+		nextSence();
+		
 	});
 })(jQuery);
