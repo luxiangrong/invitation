@@ -1,15 +1,25 @@
 @import url(reset.min.css);
 @import url(keyframes.css);
 
+
 *, *:before, *:after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+.device-android *{
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
 }
+
+
 
 body {
 	font-family: Tahoma, Geneva, sans-serif;
@@ -689,12 +699,12 @@ ul,ol,li {
 }
 
 #scene-4 .contact {
+	top: 10%;
 	margin: 0 13px 0 10px;
 }
 
 #scene-4 .contact li {
-	height: 30px;
-	line-height: 30px;
+	height: 33.333%;
 	background-color: rgba(240,240,240,0.8);
 	margin-bottom: 1px;
 }
@@ -703,17 +713,19 @@ ul,ol,li {
 	display: inline-block;
 	text-align: center;
 	width: 30px;
-	height: 30px;
-	line-height: 30px;
+	height: 100%;
 	float: left;
 	padding-top: 2px;
+	margin-left: 8px;
 }
 
 #scene-4 .contact li span{
 	display: block;
+	height: 100%;
 	margin-left: 30px;
 	padding-left: 1em;
 	background-color: rgba(240,240,240,1);
+	font-size: 100%;
 }
 
 #scene-4 .btn {

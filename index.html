@@ -12,6 +12,13 @@
 		<script type="text/javascript" src="js/jquery.touchwipe.1.1.1.js"></script>
 		<script type="text/javascript" src="js/function.js"></script>
 		<script>
+			//android系统上为html添加class：devic-android
+			var classNames = [];
+			if (navigator.userAgent.match(/android/i)) classNames.push('device-android');
+			var html = document.getElementsByTagName('html')[0];
+			if (html.classList) html.classList.add.apply(html.classList, classNames);
+			
+			alert(jQuery('html').attr('class'));
 			//加载动画
 			jQuery.noConflict();
 			(function($) {
@@ -55,18 +62,57 @@
 					</div>
 				</div>
 				
-				<div class="row" style="position: relative;">
+				<div class="row" style="position: relative; height: 30%;">
 					<h1 class="label" style="z-index: 1">联系方式</h1>
-					<div class="col-100">
-						<ul class="contact">
+					<div class="col-100 responsive-y">
+						<ul class="contact responsive-y">
 							<li>
-								<strong><i class="icon-phone"></i></strong><span>+86-20-12345678</span>
+								<strong>
+									<table style="height: 100%;">
+										<tr>
+											<td style="vertical-align: middle; text-align: center"><i class="icon-phone"></i></td>
+										</tr>
+									</table>
+								</strong>
+								<span>
+									<table style="height: 100%;">
+										<tr>
+											<td style="vertical-align: middle">+86-20-12345678</td>
+										</tr>
+									</table>
+								</span>
 							</li>
 							<li>
-								<strong><i class="icon-email"></i></strong><span>gumaoning@sohu.com</span>
+								<strong>
+									<table style="height: 100%;">
+										<tr>
+											<td style="vertical-align: middle; text-align: center"><i class="icon-email"></i></td>
+										</tr>
+									</table>
+								</strong>
+								<span>
+									<table style="height: 100%;">
+										<tr>
+											<td style="vertical-align: middle">gumaoning@sohu.com</td>
+										</tr>
+									</table>
+								</span>
 							</li>
 							<li>
-								<strong><i class="icon-location"></i></strong><span>中国广州  大学城中心</span>
+								<strong>
+									<table style="height: 100%;">
+										<tr>
+											<td style="vertical-align: middle; text-align: center"><i class="icon-location"></i></td>
+										</tr>
+									</table>
+								</strong>
+								<span>
+									<table style="height: 100%;">
+										<tr>
+											<td style="vertical-align: middle">中国广州  大学城中心</td>
+										</tr>
+									</table>
+								</span>
 							</li>
 						</ul>
 					</div>
@@ -224,7 +270,7 @@
 						</p></td>
 					</tr>
 				</table>
-				<div class=""  style="position: absolute; bottom: 0px; width: 100%;">
+				<div class=""  style="position: absolute; bottom: 0px; width: 100%; height: 60%;">
 					<table class="meeting-info" style="z-index: 100">
 						<tbody>
 							<tr>
@@ -259,7 +305,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="map" id="map" style="width: 100%; max-height: 150px;z-index: 100">
+					<div class="map" id="map" style="width: 100%; max-height: 10%;z-index: 100">
 						<img src="images/map.jpg" alt="地图" style="width: 100%;" />
 							<!--
 							<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>

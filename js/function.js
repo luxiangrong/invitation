@@ -240,6 +240,8 @@ jQuery.noConflict();
 		
 		nextSence();
 		nextSence();
+		nextSence();
+		nextSence();
 		
 	});
 })(jQuery);
