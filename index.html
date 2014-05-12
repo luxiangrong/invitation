@@ -18,7 +18,6 @@
 			var html = document.getElementsByTagName('html')[0];
 			if (html.classList) html.classList.add.apply(html.classList, classNames);
 			
-			alert(jQuery('html').attr('class'));
 			//加载动画
 			jQuery.noConflict();
 			(function($) {
@@ -201,7 +200,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="guest-info-wrap responsive">
+				<div class="guest-info-wrap responsive" style="position: absolute;">
 					<div class="guest-info hide" id="guest-info-1">
 						<i ><img src="images/icon_04.png" /></i>
 						<div class="img-crop">

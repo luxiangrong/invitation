@@ -645,14 +645,12 @@ ul,ol,li {
 
 #scene-3 .guest-info.hide {
 	transform: scale(0);
-	opacity: 0;
 	-webkit-transform: scale(0);
 	transition: transform 1s , opacity 1s  ;
 	-webkit-transition: -webkit-transform 1s  , opacity 1s  ;
 }
 
 #scene-3 .guest-info.show {
-	opacity: 1;
 	transform: scale(1);
 	-webkit-transform: scale(1);
 }
