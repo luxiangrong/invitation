@@ -21,13 +21,15 @@
 			wipeDown : function() {
 			},
 			preventDefaultEvents : true,
-			stopPropagation: true
+			stopPropagation: true,
+			simulate: true
 		};
 
 		if (settings)
 			$.extend(config, settings);
 
 		this.each(function() {
+			var $this = $(this);
 			var startX;
 			var startY;
 			var isMoving = false;
@@ -46,8 +48,13 @@
 					$.Event(e).stopPropagation();
 				}
 				if (isMoving) {
-					var x = e.touches[0].pageX;
-					var y = e.touches[0].pageY;
+					if(e.touches && e.touches.length == 1) {
+						var x = e.touches[0].clientX;
+						var y = e.touches[0].clientY;
+					} else if (config.simulate) {
+						var x = e.originalEvent.screenX;
+						var y = e.originalEvent.screenY;
+					}
 					var dx = startX - x;
 					var dy = startY - y;
 					if (Math.abs(dx) >= config.min_move_x) {
@@ -72,16 +79,29 @@
 				if (config.stopPropagation) {
 					$.Event(e).stopPropagation();
 				}
-				if (e.touches.length == 1) {
-					startX = e.touches[0].pageX;
-					startY = e.touches[0].pageY;
-					isMoving = true;
-					this.addEventListener('touchmove', onTouchMove, false);
+				if(e.touches && e.touches.length == 1) {
+					startX = e.touches[0].clientX;
+					startY = e.touches[0].clientY;
+				} else if (config.simulate) {
+					startX = e.originalEvent.screenX;
+					startY = e.originalEvent.screenY;
 				}
+				isMoving = true;
+				if('ontouchmove' in document.documentElement) {
+						this.addEventListener('touchmove', onTouchMove, false);
+					} else {
+						if(config.simulate) {
+							$this.off('mousemove').on('mousemove', onTouchMove);
+						}
+					}
 			}
 
 			if ('ontouchstart' in document.documentElement) {
 				this.addEventListener('touchstart', onTouchStart, false);
+			}else {
+				if(config.simulate) {
+					$this.off('mousedown').on('mousedown', onTouchStart);
+				}
 			}
 		});
 

@@ -141,7 +141,8 @@ jQuery.noConflict();
 			});
 			
 			$("#scene-3 .avatar").on('click', function(){
-				$("#guest-info-1").addClass('show');
+				var target = $(this).attr('data-target');
+				$(target).addClass('show');
 				$("#scene-3 .guest-info-wrap").css('top', 0);
 				$("#scene-3 .guest-info-wrap").css('left', 0);
 				var modal = $("<div class='modal'></div>");
@@ -153,13 +154,13 @@ jQuery.noConflict();
 					'left': 0,
 					'background-color': 'rgba(0,0,0,0.7)'
 				});
-				$("#guest-info-1").after(modal);
+				$(target).after(modal);
 			});
 			
 			$("#scene-3 .guest-info-wrap").on('click', function(){
 				$("#scene-3 .guest-info-wrap").css('top', winHeight);
-				$("#guest-info-1").removeClass('show');
-				$("#guest-info-1").find('~ .modal').remove();
+				$(".guest-info").removeClass('show');
+				$(".guest-info").find('~ .modal').remove();
 			});
 	
 			//广告
