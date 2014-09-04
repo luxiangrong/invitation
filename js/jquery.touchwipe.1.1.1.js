@@ -47,7 +47,6 @@
 				if(config.stopPropagation) {
 					$.Event(e).stopPropagation();
 				}
-				if('ontouchmove' in document.documentElement) {
 				if(isMoving) {
 					if(e.touches && e.touches.length == 1) {
 						var x = e.touches[0].clientX;
@@ -74,35 +73,10 @@
 						}
 					}
 				}
-				}
 			}
 			
 			function onTouchEnd(e) {
-				if(e.touches && e.touches.length == 1) {
-					var x = e.touches[0].clientX;
-					var y = e.touches[0].clientY;
-				} else if(config.simulate) {
-					var x = e.originalEvent.screenX;
-					var y = e.originalEvent.screenY;
-				}
-				var dx = startX - x;
-				var dy = startY - y;
-				
-				if (Math.abs(dx) >= config.min_move_x) {
-					if (dx > 0) {
-						config.wipeLeft();
-					} else {
-						config.wipeRight();
-					}
-					cancelTouch();
-				} else if (Math.abs(dy) >= config.min_move_y) {
-					if (dy > 0) {
-						config.wipeDown();
-					} else {
-						config.wipeUp();
-					}
-					cancelTouch();
-				}
+				isMoving = false;
 			}
 
 			function onTouchStart(e) {
