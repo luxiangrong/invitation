@@ -142,8 +142,8 @@ jQuery.noConflict();
 			
 			$("#scene-3 .avatar").on('click', function(){
 				var target = $(this).attr('data-target');
-				$(".guest-info").removeClass('hide');
-				$(".guest-info").addClass('show');
+				$(target).removeClass('hide');
+				$(target).addClass('show');
 				$("#scene-3 .guest-info-wrap").css('top', 0);
 				$("#scene-3 .guest-info-wrap").css('left', 0);
 				var modal = $("<div class='modal'></div>");
