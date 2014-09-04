@@ -142,7 +142,8 @@ jQuery.noConflict();
 			
 			$("#scene-3 .avatar").on('click', function(){
 				var target = $(this).attr('data-target');
-				$(target).addClass('show');
+				$(".guest-info").removeClass('hide');
+				$(".guest-info").addClass('show');
 				$("#scene-3 .guest-info-wrap").css('top', 0);
 				$("#scene-3 .guest-info-wrap").css('left', 0);
 				var modal = $("<div class='modal'></div>");
@@ -158,8 +159,12 @@ jQuery.noConflict();
 			});
 			
 			$("#scene-3 .guest-info-wrap").on('click', function(){
-				$("#scene-3 .guest-info-wrap").css('top', winHeight);
+				$(".guest-info").addClass('hide');
 				$(".guest-info").removeClass('show');
+				window.setTimeout(function(){
+					$("#scene-3 .guest-info-wrap").css('top', winHeight);
+				}, 1000);
+				
 				$(".guest-info").find('~ .modal').remove();
 			});
 	

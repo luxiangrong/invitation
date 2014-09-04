@@ -599,6 +599,8 @@ ul,ol,li {
 	z-index: 20;
 	background-color: rgba(0,0,0,0.9);
 	border-radius: 0 0 20px 20px;
+	transition: transform 1s , opacity 1s  ;
+	-webkit-transition: -webkit-transform 1s  , opacity 1s  ;
 }
 
 #scene-3 .guest-info i{
@@ -646,8 +648,6 @@ ul,ol,li {
 #scene-3 .guest-info.hide {
 	transform: scale(0);
 	-webkit-transform: scale(0);
-	transition: transform 1s , opacity 1s  ;
-	-webkit-transition: -webkit-transform 1s  , opacity 1s  ;
 }
 
 #scene-3 .guest-info.show {
