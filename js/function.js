@@ -5,7 +5,7 @@ jQuery.noConflict();
 		
 			var winHeight = $(window).height();
 			var winWidth = $(window).width();
-			var scenesArray = ['cover', 'scene-1', 'scene-2', 'scene-3', 'scene-4'];
+			var scenesArray = ['cover', 'scene-1', 'scene-3', 'scene-2', 'scene-4'];
 			var current = 0;
 	
 			$(".arrow-down").click(function(e) {
@@ -138,6 +138,17 @@ jQuery.noConflict();
 				min_move_x : 20,
 				min_move_y : 20,
 				preventDefaultEvents : true
+			});
+			
+			//嘉宾列表根据元素个数自适应高度，垂直居中显示
+			$("#scene-3 .ver-center").each(function(index, item){
+				var liCount = $(this).find('li').size();
+				var percent = 1 / liCount * 100;
+				
+				var startTop = 100 - 25 * liCount;
+				$(this).find('li').each(function(index2, item2){
+					$(this).css('top', startTop / 2 + 23* index2  + '%');
+				});
 			});
 			
 			$("#scene-3 .avatar").on('click', function(){

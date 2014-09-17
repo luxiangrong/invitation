@@ -22,7 +22,8 @@
 
 
 body {
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
 }
 
 ul,ol,li {
@@ -139,31 +140,29 @@ ul,ol,li {
 
 .arrow-down {
 	position: fixed;
-	top: 5px;
-	width: 38px;
-	left: 50%;
-	margin-left: -19px;
-	height: 25px;
+	top: 10px;
+	width: 100%;
+	height: 26px;
 	background: url("../images/arrow_down.png") center center no-repeat;
-	background-size: 37.5px 12.5px;
-	animation: move-down 0.5s alternate  infinite;
-	-webkit-animation: move-down 0.5s alternate  infinite;
+	background-size: 32px 16px;
+	animation: move-down 0.8s alternate  infinite;
+	-webkit-animation: move-down 0.8s alternate  infinite;
 	z-index: 1100;
+	opacity: 0.6;
 	display: none;
 }
 
 .arrow-up {
 	position: fixed;
-	bottom: 5px;
-	width: 38px;
-	left: 50%;
-	margin-left: -19px;
-	height: 25px;
+	bottom: 10px;
+	width: 100%;
+	height: 26px;
 	background: url("../images/arrow_up.png") center center no-repeat;
-	background-size: 37.5px 12.5px;
-	animation: move-up 0.5s alternate  infinite;
-	-webkit-animation: move-up 0.5s alternate  infinite;
+	background-size: 32px 16px;
+	animation: move-up 0.8s alternate  infinite;
+	-webkit-animation: move-up 0.8s alternate  infinite;
 	z-index: 1100;
+	opacity: 0.6;
 	display: none;
 }
 
@@ -249,6 +248,16 @@ ul,ol,li {
 	margin-bottom: 10px;
 }
 
+.bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	display: none;
+}
+
 /**================ 请柬封面 ==================**/
 
 #cover {
@@ -262,7 +271,7 @@ ul,ol,li {
 	top: -25%;
 	z-index: 1;
 	background: url("../images/ring.png") no-repeat center center;
-	background-size: 40% auto;
+	background-size: 50% auto;
 	animation: rotation 2s;
 	-webkit-animation: rotation 2s;
 	animation-timing-function: linear;
@@ -283,18 +292,32 @@ ul,ol,li {
 	position: absolute;
 	left: 50%;
 	bottom: 40px;
-	margin-left: -50px;
-	width: 100px;
+	margin-left: -100px;
+	width: 200px;
 	height: 150px;
 	overflow: visible;
 }
 
 #cover .touch-guide .arrow-top {
 	position: absolute;
+	bottom: 40px;
 	width: 100%;
-	height: 100%;
-	background: transparent url("../images/arraw_top.png") no-repeat center center;
-	background-size: 30%;
+	height: 26px;
+	background: url("../images/arrow_up.png") center center no-repeat;
+	background-size: 52px 22px;
+	animation: move-up 0.8s alternate  infinite;
+	-webkit-animation: move-up 0.8s alternate  infinite;
+	opacity: 0.6;
+}
+
+#cover .touch-guide p {
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+	color: #fff;
+	text-align: center;
+	font-size: 32px;
+	opacity: 0.6;
 }
 
 #cover .touch-guide .touch-area {
@@ -327,9 +350,13 @@ ul,ol,li {
 #scene-1 .photo-intro{
  	text-align: center;
  	margin-top: 20%;
- 	opacity: 0;
- 	transition:  all 2.5s;
-	-webkit-transition:  all 2.5s;
+}
+
+#scene-1 .photo-intro  {
+	opacity: 0;
+ 	transition:  opacity 2.5s;
+	-webkit-transition:  opacity 2.5s;
+	width: 100%;
 }
 
 #scene-1.current .photo-intro {
@@ -337,9 +364,11 @@ ul,ol,li {
 }
 
 #scene-1 p.text-intro {
+	font-family: Tahoma,Geneva,sans-serif;
+	font-size: 1.2em;
 	color: #AAA;
 	background-color: rgba(0,0,0, 0.5);
-	padding: 1em;
+	padding: 0.5em;
 	position: fixed;
 	bottom: 0;
 	
@@ -374,7 +403,11 @@ ul,ol,li {
 	box-sizing: border-box;
 	margin: 30px 10px 10px;
 	text-align: center;
-	color: #FFF;
+	color: rgba(255, 255, 255, 1);
+}
+
+#scene-2 .schedule td p{
+	color: rgba(111, 111, 111, 1);
 }
 
 #scene-2 .schedule td h2 {
@@ -393,6 +426,8 @@ ul,ol,li {
 	border: 1px solid rgba(255,255,255,0.3);
 	border-radius:  0 0 12px 12px;
 	margin-top: 0;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 #scene-2 table.meeting-info {
@@ -472,24 +507,59 @@ ul,ol,li {
 
 #scene-3 ul, #scene-3 li {
 	list-style: none;
-	text-align:center;
 }
 
 #scene-3 ul{
+	position: relative;
 	margin-top: 10px;
 	height: 100%;
+	padding: 10% 0;
 }
 
 #scene-3 li {
 	padding-top: 15px;
-	height: 30%;
+	height: 23%;
+	width: 100%;
+	position: absolute;
+	overflow: hidden;
 }
 
 #scene-3 .avatar-box {
+	position: relative;
+	height: 100%;
 	transform: scale(1);
 	-webkit-transform: scale(1);
 	transition: transform 0.5s;
 	-webkit-transition: -webkit-transform 0.5s;
+}
+
+#scene-3 .avatar-box p {
+	font-family: Tahoma,Geneva,sans-serif;
+	font-size: 1em;
+	text-align: right;
+	padding: 3px 5px 5px 0 ;
+	position: absolute;
+	bottom: 0;
+	width: 70%;
+	background-color: rgba(254, 163, 171, 0.75)
+}
+
+#scene-3 .right-col .avatar-box p {
+	padding: 3px 0 3px 5px;
+	right: 0;
+	text-align: left;
+}
+
+#scene-3 li:nth-of-type(1) .avatar-box p {
+	background-color: rgba(254, 163, 171, 0.75)
+}
+
+#scene-3 li:nth-of-type(2) .avatar-box p {
+	background-color: rgba(181, 215, 133, 0.75)
+}
+
+#scene-3 li:nth-of-type(3) .avatar-box p {
+	background-color: rgba(181, 215, 133, 0.75)
 }
 
 #scene-3 .avatar-box.active {
@@ -498,6 +568,10 @@ ul,ol,li {
 }
 
 #scene-3  li img.avatar{
+	position:absolute;
+	width: 75%;
+	left: 50%;
+	margin-left: -37.5%;
 	transition: transform 1.5s , border-width 0.5s;
 	-webkit-transition: -webkit-transform 1.5s , border-width 0.5s;
 }
@@ -526,18 +600,18 @@ ul,ol,li {
 }
 
 #scene-3 .left-col li img.avatar{
-	transform:  translateX(-320px) rotateZ(-360deg);
-	-webkit-transform:  translateX(-320px) rotateZ(-360deg);
+	transform:  translateX(-320px) rotateZ(0deg);
+	-webkit-transform:  translateX(-320px) rotateZ(0deg);
 }
 
 #scene-3 .left-col li:nth-of-type(2) img.avatar{
-	transform:  translateX(-640px) rotateZ(-720deg);
-	-webkit-transform:  translateX(-640px) rotateZ(-720deg);
+	transform:  translateX(-640px) rotateZ(0deg);
+	-webkit-transform:  translateX(-640px) rotateZ(0deg);
 }
 
 #scene-3 .left-col li:nth-of-type(3) img.avatar{
-	transform:  translateX(-960px) rotateZ(-1080deg);
-	-webkit-transform:  translateX(-960px) rotateZ(-1080deg);
+	transform:  translateX(-960px) rotateZ(0deg);
+	-webkit-transform:  translateX(-960px) rotateZ(0deg);
 }
 
 #scene-3 .left-col li p{
@@ -559,18 +633,18 @@ ul,ol,li {
 }
 
 #scene-3 .right-col li img.avatar{
-	transform:  translateX(320px) rotateZ(360deg);
-	-webkit-transform:  translateX(320px) rotateZ(360deg);
+	transform:  translateX(320px) ;
+	-webkit-transform:  translateX(320px) ;
 }
 
 #scene-3 .right-col li:nth-of-type(2) img.avatar{
-	transform:  translateX(640px) rotateZ(720deg);
-	-webkit-transform:  translateX(640px) rotateZ(720deg);
+	transform:  translateX(640px) ;
+	-webkit-transform:  translateX(640px) ;
 }
 
 #scene-3 .right-col li:nth-of-type(3) img.avatar{
-	transform:  translateX(1080px) rotateZ(1080deg);
-	-webkit-transform:  translateX(1080px) rotateZ(1080deg);
+	transform:  translateX(1080px) ;
+	-webkit-transform:  translateX(1080px) ;
 }
 
 #scene-3 .right-col li p{
