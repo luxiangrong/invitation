@@ -23,7 +23,7 @@
 
 body {
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 ul,ol,li {
@@ -365,7 +365,6 @@ ul,ol,li {
 
 #scene-1 p.text-intro {
 	font-family: Tahoma,Geneva,sans-serif;
-	font-size: 1.2em;
 	color: #AAA;
 	background-color: rgba(0,0,0, 0.5);
 	padding: 0.5em;
@@ -386,7 +385,7 @@ ul,ol,li {
 }
 /**================ 场景2  ==================**/
 #scene-2 {
-	background: url(../images/bg3.jpg) no-repeat center top;
+	background: url(../images/bg4.jpg) no-repeat center top;
 	background-size: 100% 100%;
 }
 
@@ -407,7 +406,8 @@ ul,ol,li {
 }
 
 #scene-2 .schedule td p{
-	color: rgba(111, 111, 111, 1);
+	font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif;
+	color: rgba(255, 255, 255, 1);
 }
 
 #scene-2 .schedule td h2 {
@@ -497,12 +497,18 @@ ul,ol,li {
 
 #scene-2 .meeting-info p {
 	padding-left: 1em;
+	font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif;
 }
 
 /**================ 场景3  ==================**/
 #scene-3 {
 	background: url(../images/bg3.jpg) no-repeat center top;
 	background-size: 100% 100%;
+}
+
+#scene-3 .horview {
+	transition: transform 1s;
+	-webkit-transition: -webkit-transform 1s;
 }
 
 #scene-3 ul, #scene-3 li {
@@ -569,11 +575,19 @@ ul,ol,li {
 
 #scene-3  li img.avatar{
 	position:absolute;
-	width: 75%;
+	width: 60%;
 	left: 50%;
-	margin-left: -37.5%;
+	margin-left: -30%;
 	transition: transform 1.5s , border-width 0.5s;
 	-webkit-transition: -webkit-transform 1.5s , border-width 0.5s;
+}
+
+#scene-3 .left-col li img.avatar {
+	margin-left: -15%;
+}
+
+#scene-3 .right-col li img.avatar {
+	margin-left: -45%;
 }
 
 #scene-3.current  li img.avatar{

@@ -151,6 +151,30 @@ jQuery.noConflict();
 				});
 			});
 			
+			$("#guest-list2").css('transform', 'translateX(' + winWidth + 'px)' + ' translateY(-' + winHeight + 'px)');
+			
+			$("#scene-3").touchwipe({
+				wipeUp : function() {
+					//手指往下滑动，页面往上滚动
+					prevSence();
+				},
+				wipeDown : function() {
+					//手指往上滑动，页面往下滚动
+					nextSence();
+				},
+				wipeLeft : function() {
+					$("#guest-list1").css('transform', 'translateX(-' + winWidth + 'px)' + ' translateY(0px)');
+					$("#guest-list2").css('transform', 'translateX(0px)' + ' translateY(-' + winHeight + 'px)');
+				},
+				wipeRight : function() {
+					$("#guest-list1").css('transform', 'translateX(0px)' + ' translateY(0px)');
+					$("#guest-list2").css('transform', 'translateX(' + winWidth + 'px)' + ' translateY(-' + winHeight + 'px)');
+				},
+				min_move_x : 20,
+				min_move_y : 20,
+				preventDefaultEvents : true
+			});
+			
 			$("#scene-3 .avatar").on('click', function(){
 				var target = $(this).attr('data-target');
 				$(target).removeClass('hide');
