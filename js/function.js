@@ -5,7 +5,7 @@ jQuery.noConflict();
 		
 			var winHeight = $(window).height();
 			var winWidth = $(window).width();
-			var scenesArray = ['cover', 'scene-1', 'scene-3', 'scene-2', 'scene-4'];
+			var scenesArray = ['cover', 'scene-1', 'scene-3', 'scene-2'];
 			var current = 0;
 	
 			$(".arrow-down").click(function(e) {
@@ -50,7 +50,7 @@ jQuery.noConflict();
 					 $(".arrow-up").hide();
 					 return;
 				}
-				if($(".current").attr('id') == 'scene-4') {
+				if($(".current").attr('id') == 'scene-2') {
 					$(".arrow-up").hide();
 					$(".arrow-down").show();
 				} else {

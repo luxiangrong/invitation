@@ -400,7 +400,7 @@ ul,ol,li {
 #scene-2 .schedule td h2, #scene-2 .schedule td p{
 	width: 100px;
 	box-sizing: border-box;
-	margin: 30px 10px 10px;
+	margin: 20px 10px 10px;
 	text-align: center;
 	color: rgba(255, 255, 255, 1);
 }
@@ -818,12 +818,22 @@ ul,ol,li {
 	
 }
 
-#scene-4 .sign-up {
+#scene-4 .sign-up,
+#scene-2 .sign-up {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 1%;
 }
 
-#scene-4 .btn-sign {
+@media only screen and (min-device-height: 640px){ 
+    #scene-4 .sign-up,
+#scene-2 .sign-up {
+	text-align: center;
+	margin-top: 5%;
+}
+}
+
+#scene-4 .btn-sign,
+#scene-2 .btn-sign {
 	width: 72px;
 	height: 72px;
 	border-radius: 36px;
@@ -836,7 +846,8 @@ ul,ol,li {
 
 
 
-#scene-4 .adv {
+#scene-4 .adv,
+#scene-2 .adv  {
 	position:absolute;
 	border-radius: 18px 18px 0 0;
 	height: 100%;
@@ -853,7 +864,8 @@ ul,ol,li {
 	z-index: 10;
 }
 
-#scene-4 .adv .nav-bar {
+#scene-4 .adv .nav-bar,
+#scene-2 .adv .nav-bar {
 	height: 40px;
 	text-align: center;
 	line-height: 40px;
@@ -861,48 +873,61 @@ ul,ol,li {
 	background-size: 20px;
 }
 
-#scene-4 .adv .nav-bar .logo-2 {
+#scene-4 .adv .nav-bar .logo-2,
+#scene-2 .adv .nav-bar .logo-2 {
 	vertical-align: middle;
 }
 
-#scene-4 .adv .adv-list{
+#scene-4 .adv .adv-list,
+#scene-2 .adv .adv-list {
 	transition: transform 0.5s;
 	-webkit-transition: -webkit-transform 0.5s;
 }
 
-#scene-4 .adv .adv-item{
+#scene-4 .adv .adv-item,
+#scene-2 .adv .adv-item {
 	padding: 10px;
 }
 
-#scene-4 .adv h2{
+#scene-4 .adv h2,
+#scene-2 .adv h2{
 	font-size: 1.5em;
 	text-align: center;
 	color: rgba(102,82,121,1);
 	margin-top: 0.5em;
 }
 
-#scene-4 .adv h3{
+#scene-4 .adv h3,
+#scene-2 .adv h3{
 	font-size: 1em;
 	text-align: center;
 	color: rgba(102,102,102,1);
 }
 
-#scene-4 .adv .prev, #scene-4 .adv .next {
+#scene-4 .adv .prev, 
+#scene-4 .adv .next,
+#scene-2 .adv .prev, 
+#scene-2 .adv .next {
 	font-size: 1.5em;
 	color: rgba(189,189,189,1);
 }
 
-#scene-4 .adv .prev.active, #scene-4 .adv .next.active {
+#scene-4 .adv .prev.active, 
+#scene-4 .adv .next.active,
+#scene-2 .adv .prev.active, 
+#scene-2 .adv .next.active {
 	color: rgba(220,18,33,1);
 }
 
 
-#scene-4 .adv .prev{
+#scene-4 .adv .prev,
+#scene-2 .adv .prev{
 	text-align: left;
 	padding-left: 2em;
 }
 
-#scene-4 .adv .next{
+#scene-4 .adv .next,
+#scene-2 .adv .prev{
 	text-align: right;
 	padding-right: 2em;
 }
